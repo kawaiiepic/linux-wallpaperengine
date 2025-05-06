@@ -405,12 +405,12 @@ void CWallpaperApplication::show () {
         // update input information
         m_inputContext->update ();
         // check for fullscreen windows and wait until there's none fullscreen
-        if (this->m_fullScreenDetector->anythingFullscreen () && this->m_context.state.general.keepRunning) {
-            m_renderContext->setPause (true);
-            while (this->m_fullScreenDetector->anythingFullscreen () && this->m_context.state.general.keepRunning)
-                usleep (FULLSCREEN_CHECK_WAIT_TIME);
-            m_renderContext->setPause (false);
-        }
+        // if (this->m_fullScreenDetector->anythingFullscreen () && this->m_context.state.general.keepRunning) {
+        //     m_renderContext->setPause (true);
+        //     while (this->m_fullScreenDetector->anythingFullscreen () && this->m_context.state.general.keepRunning)
+        //         usleep (FULLSCREEN_CHECK_WAIT_TIME);
+        //     m_renderContext->setPause (false);
+        // }
         // process driver events
         m_videoDriver->dispatchEventQueue ();
 
